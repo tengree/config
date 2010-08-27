@@ -8,14 +8,8 @@ autoload -U compinit promptinit
 compinit
 promptinit;
 
-if [[ $EUID == 0 ]]
-then
-	PROMPT=$'%{\e[1;31m%}%n %{\e[1;34m%}%~ #%{\e[0m%} ' # user dir %
-else
-	PROMPT=$'%{\e[1;32m%}%n %{\e[1;34m%}%~ %#%{\e[0m%} ' # root dir #
-fi
+PROMPT=$'%{\e[1;32m%}%n@%m %{\e[1;34m%}%~ #%{\e[0m%} '
 RPROMPT=$'%{\e[1;34m%}%T%{\e[0m%}' # right prompt with time
 
 alias ls='ls -G'
 alias grep='grep --colour=auto'
-
